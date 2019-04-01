@@ -32,6 +32,14 @@
 #import "DownLoadCenterManager.h"
 #import "MyURLProtocol.h"
 #import "BaseDefine.h"
+#import "WebCarModel.h"
+#import "WebCarBaseController.h"
+#import "FrameDefine.h"
+#import "DownLoadCacheModel.h"
+#import "WebRequestManager.h"
+#import "WebCenterManager.h"
+#import "WebDownLoadModel.h"
+
 
 //! Project version number for AppFramework.
 FOUNDATION_EXPORT double AppFrameworkVersionNumber;

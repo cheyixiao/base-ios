@@ -76,6 +76,14 @@ NS_ASSUME_NONNULL_BEGIN
 
 //json字符串格式化
 + (NSDictionary *)dictionaryWithJsonString:(NSString *)jsonString;
+/*
+ 指定文件路径下的文件不备份
+ 
+ */
++ (BOOL)addSkipBackupAttributeToItemAtURL:(NSURL *)URL;
+
++(NSDictionary *)dictionaryWithUrlString:(NSString *)urlStr;
+
 @end
 
 NS_ASSUME_NONNULL_END

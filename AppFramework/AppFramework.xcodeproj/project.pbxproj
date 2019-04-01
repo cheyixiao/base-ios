@@ -22,6 +22,17 @@
 		248D3D9522487321005CC6BF /* DownLoadCenterManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 248D3D8622487321005CC6BF /* DownLoadCenterManager.m */; };
 		248D3D9622487321005CC6BF /* WebDownloadModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 248D3D8722487321005CC6BF /* WebDownloadModel.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		248D3D9722487321005CC6BF /* DownloadManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 248D3D8822487321005CC6BF /* DownloadManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		24CCB0252251ED4C00800F73 /* WebRequestManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 24CCB0232251ED4C00800F73 /* WebRequestManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		24CCB0262251ED4C00800F73 /* WebRequestManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 24CCB0242251ED4C00800F73 /* WebRequestManager.m */; };
+		24CCB02B2251F1D600800F73 /* WebCenterManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 24CCB0272251F1D500800F73 /* WebCenterManager.m */; };
+		24CCB02C2251F1D600800F73 /* WebCenterManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 24CCB0282251F1D600800F73 /* WebCenterManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		24CCB02D2251F1D600800F73 /* WebCarModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 24CCB0292251F1D600800F73 /* WebCarModel.m */; };
+		24CCB02E2251F1D600800F73 /* WebCarModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 24CCB02A2251F1D600800F73 /* WebCarModel.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		24CCB0312251F2BC00800F73 /* DownLoadCacheModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 24CCB02F2251F2BC00800F73 /* DownLoadCacheModel.m */; };
+		24CCB0322251F2BC00800F73 /* DownLoadCacheModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 24CCB0302251F2BC00800F73 /* DownLoadCacheModel.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		24CCB03A2251F7C700800F73 /* WebCarBaseController.m in Sources */ = {isa = PBXBuildFile; fileRef = 24CCB0382251F7C700800F73 /* WebCarBaseController.m */; };
+		24CCB03B2251F7C700800F73 /* WebCarBaseController.h in Headers */ = {isa = PBXBuildFile; fileRef = 24CCB0392251F7C700800F73 /* WebCarBaseController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		24CCB03D2251FFF400800F73 /* FrameDefine.h in Headers */ = {isa = PBXBuildFile; fileRef = 24CCB03C2251FFF400800F73 /* FrameDefine.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		24D1E2C92241EC2100E8A2DB /* ThirdSdkManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 24D1E2C72241EC2100E8A2DB /* ThirdSdkManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		24D1E2CA2241EC2100E8A2DB /* ThirdSdkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 24D1E2C82241EC2100E8A2DB /* ThirdSdkManager.m */; };
 		24D1E46D2242243700E8A2DB /* WebViewManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 24D1E46B2242243700E8A2DB /* WebViewManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -115,6 +126,21 @@
 		248D3DAE224873C3005CC6BF /* MJFoundation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MJFoundation.m; sourceTree = "<group>"; };
 		248D3DAF224873C3005CC6BF /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		248D3DB0224873C3005CC6BF /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		24CCB0232251ED4C00800F73 /* WebRequestManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WebRequestManager.h; sourceTree = "<group>"; };
+		24CCB0242251ED4C00800F73 /* WebRequestManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WebRequestManager.m; sourceTree = "<group>"; };
+		24CCB0272251F1D500800F73 /* WebCenterManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebCenterManager.m; sourceTree = "<group>"; };
+		24CCB0282251F1D600800F73 /* WebCenterManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebCenterManager.h; sourceTree = "<group>"; };
+		24CCB0292251F1D600800F73 /* WebCarModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebCarModel.m; sourceTree = "<group>"; };
+		24CCB02A2251F1D600800F73 /* WebCarModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebCarModel.h; sourceTree = "<group>"; };
+		24CCB02F2251F2BC00800F73 /* DownLoadCacheModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DownLoadCacheModel.m; sourceTree = "<group>"; };
+		24CCB0302251F2BC00800F73 /* DownLoadCacheModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DownLoadCacheModel.h; sourceTree = "<group>"; };
+		24CCB0342251F59000800F73 /* MBProgressHUD.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
+		24CCB0352251F59000800F73 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		24CCB0362251F59000800F73 /* MBProgressHUD.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
+		24CCB0372251F59000800F73 /* README.mdown */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.mdown; sourceTree = "<group>"; };
+		24CCB0382251F7C700800F73 /* WebCarBaseController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebCarBaseController.m; sourceTree = "<group>"; };
+		24CCB0392251F7C700800F73 /* WebCarBaseController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebCarBaseController.h; sourceTree = "<group>"; };
+		24CCB03C2251FFF400800F73 /* FrameDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FrameDefine.h; sourceTree = "<group>"; };
 		24D1E2C72241EC2100E8A2DB /* ThirdSdkManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThirdSdkManager.h; sourceTree = "<group>"; };
 		24D1E2C82241EC2100E8A2DB /* ThirdSdkManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThirdSdkManager.m; sourceTree = "<group>"; };
 		24D1E45B22421E8900E8A2DB /* AMapLocationKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AMapLocationKit.framework; sourceTree = "<group>"; };
@@ -317,6 +343,34 @@
 			path = MJExtension;
 			sourceTree = "<group>";
 		};
+		24CCB0222251ED2100800F73 /* LookCar */ = {
+			isa = PBXGroup;
+			children = (
+				24CCB02A2251F1D600800F73 /* WebCarModel.h */,
+				24CCB0292251F1D600800F73 /* WebCarModel.m */,
+				24CCB0302251F2BC00800F73 /* DownLoadCacheModel.h */,
+				24CCB02F2251F2BC00800F73 /* DownLoadCacheModel.m */,
+				24CCB0232251ED4C00800F73 /* WebRequestManager.h */,
+				24CCB0242251ED4C00800F73 /* WebRequestManager.m */,
+				24CCB0282251F1D600800F73 /* WebCenterManager.h */,
+				24CCB0272251F1D500800F73 /* WebCenterManager.m */,
+				24CCB0392251F7C700800F73 /* WebCarBaseController.h */,
+				24CCB0382251F7C700800F73 /* WebCarBaseController.m */,
+			);
+			path = LookCar;
+			sourceTree = "<group>";
+		};
+		24CCB0332251F59000800F73 /* MBProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				24CCB0342251F59000800F73 /* MBProgressHUD.m */,
+				24CCB0352251F59000800F73 /* LICENSE */,
+				24CCB0362251F59000800F73 /* MBProgressHUD.h */,
+				24CCB0372251F59000800F73 /* README.mdown */,
+			);
+			path = MBProgressHUD;
+			sourceTree = "<group>";
+		};
 		24D1E2C52241EBD100E8A2DB /* Category */ = {
 			isa = PBXGroup;
 			children = (
@@ -504,6 +558,7 @@
 		24D64FF82240DAE8000F6104 /* AppFramework */ = {
 			isa = PBXGroup;
 			children = (
+				24CCB0332251F59000800F73 /* MBProgressHUD */,
 				248D3D98224873C3005CC6BF /* MJExtension */,
 				24F72001224324D8008DAD01 /* Masonry */,
 				24D1E513224232CB00E8A2DB /* Reachability */,
@@ -532,11 +587,13 @@
 				24F7202922432F22008DAD01 /* BaseTabBarController.h */,
 				24F7202822432F22008DAD01 /* BaseTabBarController.m */,
 				24D1E522224234F000E8A2DB /* AppFrameworkHeader.h */,
+				24CCB0222251ED2100800F73 /* LookCar */,
 				248D3D792248725B005CC6BF /* DownLoad */,
 				24F7203D2244D45A008DAD01 /* Web_intercept */,
 				24D1E2C62241EC0400E8A2DB /* ThirdSdkManager */,
 				24D64FFA2240DAE8000F6104 /* Info.plist */,
 				24E76DF7224A2ACB00F289CB /* BaseDefine.h */,
+				24CCB03C2251FFF400800F73 /* FrameDefine.h */,
 			);
 			path = AppFramework;
 			sourceTree = "<group>";
@@ -635,12 +692,18 @@
 				24F720482244D47C008DAD01 /* WebInterceptDownLoadManager.h in Headers */,
 				24F7202B22432F22008DAD01 /* BaseTabBarController.h in Headers */,
 				24D1E523224234F000E8A2DB /* AppFrameworkHeader.h in Headers */,
+				24CCB02E2251F1D600800F73 /* WebCarModel.h in Headers */,
+				24CCB03B2251F7C700800F73 /* WebCarBaseController.h in Headers */,
+				24CCB03D2251FFF400800F73 /* FrameDefine.h in Headers */,
+				24CCB0322251F2BC00800F73 /* DownLoadCacheModel.h in Headers */,
+				24CCB0252251ED4C00800F73 /* WebRequestManager.h in Headers */,
+				24CCB02C2251F1D600800F73 /* WebCenterManager.h in Headers */,
 				248D3D9622487321005CC6BF /* WebDownloadModel.h in Headers */,
 				24D1E5302242389F00E8A2DB /* UIDevice+CCDevice.h in Headers */,
 				24D1E4712242246500E8A2DB /* WKProcessPool+WebCarProcessPool.h in Headers */,
 				24E76DFA224B131800F289CB /* BaseDefine.h in Headers */,
-				24F720492244D47C008DAD01 /* NSURLProtocol+WKWebVIew.h in Headers */,
 				248D3D9222487321005CC6BF /* UncaughtExceptionHandler.h in Headers */,
+				24F720492244D47C008DAD01 /* NSURLProtocol+WKWebVIew.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -740,6 +803,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				24CCB0312251F2BC00800F73 /* DownLoadCacheModel.m in Sources */,
 				24D6504C2240E18A000F6104 /* NSData+Extension.m in Sources */,
 				24D1E2CA2241EC2100E8A2DB /* ThirdSdkManager.m in Sources */,
 				24F720472244D47C008DAD01 /* WebInterceptDownLoadManager.m in Sources */,
@@ -752,7 +816,11 @@
 				24D1E4A3224230D800E8A2DB /* UIColor+CCColor.m in Sources */,
 				24D1E49722422D7B00E8A2DB /* UIView+CCView.m in Sources */,
 				24D1E49C22422E6300E8A2DB /* AppFrameworkTool.m in Sources */,
+				24CCB0262251ED4C00800F73 /* WebRequestManager.m in Sources */,
+				24CCB02D2251F1D600800F73 /* WebCarModel.m in Sources */,
 				24D1E53522423B4E00E8A2DB /* BaseViewController.m in Sources */,
+				24CCB02B2251F1D600800F73 /* WebCenterManager.m in Sources */,
+				24CCB03A2251F7C700800F73 /* WebCarBaseController.m in Sources */,
 				24D1E5382242419400E8A2DB /* JSBridgeViewController.m in Sources */,
 				248D3D8F22487321005CC6BF /* WebDownloadModel.m in Sources */,
 				24F720462244D47C008DAD01 /* NSURLProtocol+WKWebVIew.m in Sources */,

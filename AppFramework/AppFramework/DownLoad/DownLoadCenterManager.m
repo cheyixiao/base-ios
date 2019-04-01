@@ -62,5 +62,10 @@ static DownLoadCenterManager* instance = nil;
     }
     return _downLoadFailUrls;
 }
-
+-(NSMutableDictionary *)downLoadStatus{
+    if (!_downLoadStatus) {
+        _downLoadStatus = [NSMutableDictionary dictionary];
+    }
+    return _downLoadStatus;
+}
 @end

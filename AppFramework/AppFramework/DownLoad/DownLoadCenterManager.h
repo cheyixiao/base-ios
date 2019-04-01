@@ -12,6 +12,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface DownLoadCenterManager : NSObject
 
+@property(nonatomic,strong)NSMutableDictionary    *downLoadStatus;  //记录车辆的下载状态
+
 @property(nonatomic,strong)NSMutableDictionary    *allCarDic;
 @property(nonatomic,strong)NSMutableDictionary    *carCount;
 //@property(nonatomic,strong)NSArray                *currentArr;

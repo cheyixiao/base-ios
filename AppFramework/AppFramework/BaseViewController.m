@@ -8,6 +8,7 @@
 
 #import "BaseViewController.h"
 #import "AppFrameworkTool.h"
+#import "FrameDefine.h"
 
 @interface BaseViewController ()<UINavigationControllerDelegate,UIGestureRecognizerDelegate>
 
@@ -40,12 +41,39 @@
     self.navigationController.interactivePopGestureRecognizer.delegate = self;
 
 }
-
+- (void)resetRelodBtnFrame:(UIImage *)reloadImage{
+    
+    self.reloadBtn.frame     = CGRectMake(kScreenWidth * 0.5 - reloadImage.size.width * 0.5,
+                                      kScreenHeight * 0.5 - reloadImage.size.height * 0.5, reloadImage.size.width,
+                                      reloadImage.size.height);
+    [self.reloadBtn setImage:reloadImage forState:UIControlStateNormal];
+}
 - (void)navigationController:(UINavigationController *)navigationController willShowViewController:(UIViewController *)viewController animated:(BOOL)animated {
     
     //    [self setNavigationStatus:viewController];
     
     // 判断要显示的控制器是否是自己
     
+    
+}
+-(void )relodBtnClick:(UIButton *)sender{
+    
+}
+#pragma mark lazyLoad
+-(UIButton *)reloadBtn{
+    if (!_reloadBtn) {
+        NSString *path       = [[NSBundle mainBundle] bundlePath];
+        path                 = [path stringByAppendingString:@"/noNetImage"];
+        UIImage *reloadImage = [UIImage imageWithContentsOfFile:path];
+        _reloadBtn           = [UIButton buttonWithType:UIButtonTypeCustom];
+        _reloadBtn.frame     = CGRectMake(kScreenWidth * 0.5 - reloadImage.size.width * 0.5,
+                                          kScreenHeight * 0.5 - reloadImage.size.height * 0.5, reloadImage.size.width,
+                                          reloadImage.size.height);
+        _reloadBtn.hidden   = YES;
+        [_reloadBtn setImage:reloadImage forState:UIControlStateNormal];
+        [_reloadBtn setContentHorizontalAlignment:UIControlContentHorizontalAlignmentLeft];
+        [_reloadBtn addTarget:self action:@selector(relodBtnClick:) forControlEvents:UIControlEventTouchUpInside];
+    }
+    return _reloadBtn;
 }
 @end

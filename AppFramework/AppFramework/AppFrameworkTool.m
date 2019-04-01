@@ -10,6 +10,9 @@
 #import "UIDevice+CCDevice.h"
 #import <CommonCrypto/CommonDigest.h>
 #import "BaseDefine.h"
+#include <sys/xattr.h>
+#import "WebCenterManager.h"
+
 @implementation AppFrameworkTool
 
 + (void)pushWebViewcontroller:(UIViewController *)controller{
@@ -102,6 +105,7 @@
 }
 +(void)screenDirection:(BOOL)screenDirection{
     
+    [WebCenterManager shareInstance].screenDirection = screenDirection;
     if (screenDirection) {
         //调用横屏代码
         [UIDevice switchNewOrientation:UIInterfaceOrientationLandscapeRight];
@@ -245,5 +249,42 @@
         return nil;
     }
     return dic;
+}
++ (BOOL)addSkipBackupAttributeToItemAtURL:(NSURL *)URL {
+    const char* filePath = [[URL path] fileSystemRepresentation];
+    
+    const char* attrName = "com.apple.MobileBackup";
+    u_int8_t attrValue = 1;
+    
+    int result = setxattr(filePath, attrName, &attrValue, sizeof(attrValue), 0, 0);
+    return result == 0;
+}
++(NSDictionary *)dictionaryWithUrlString:(NSString *)urlStr
+{
+    if (urlStr && urlStr.length && [urlStr rangeOfString:@"?"].length == 1) {
+        NSArray *array = [urlStr componentsSeparatedByString:@"?"];
+        if (array && array.count == 2) {
+            NSString *paramsStr = array[1];
+            if (paramsStr.length) {
+                NSMutableDictionary *paramsDict = [NSMutableDictionary dictionary];
+                NSArray *paramArray = [paramsStr componentsSeparatedByString:@"&"];
+                for (NSString *param in paramArray) {
+                    if (param && param.length) {
+                        NSArray *parArr = [param componentsSeparatedByString:@"="];
+                        if (parArr.count == 2) {
+                            [paramsDict setObject:parArr[1] forKey:parArr[0]];
+                        }
+                    }
+                }
+                return paramsDict;
+            }else{
+                return nil;
+            }
+        }else{
+            return nil;
+        }
+    }else{
+        return nil;
+    }
 }
 @end

@@ -25,7 +25,11 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic,assign)  BOOL      swipNoBack;
 
 @property(nonatomic,assign)  BOOL      hideNavigationBar;
+//网络请求失败刷新按钮
+@property(nonatomic,strong)UIButton *reloadBtn;
 
+//重设reloadBtn frame
+- (void)resetRelodBtnFrame:(UIImage *)reloadImage;
 
 @end
 
