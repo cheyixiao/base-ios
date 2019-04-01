@@ -369,16 +369,6 @@
 
 }
 
--(void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    //需要注意的是self.isViewLoaded是必不可少的，其他方式访问视图会导致它加载 ，在WWDC视频也忽视这一点。
-    if (self.isViewLoaded && !self.view.window)// 是否是正在使用的视图
-    {
-        //code
-        self.view = nil;// 目的是再次进入时能够重新加载调用viewDidLoad函数。
-    }
-}
 - (void)dealloc {
     
     [[UIApplication sharedApplication].keyWindow removeGestureRecognizer:_tap];
@@ -387,6 +377,17 @@
         [_webViewManager.webView removeFromSuperview];
         _webViewManager.delegate = nil;
         _webViewManager          = nil;
+    }
+}
+
+-(void)didReceiveMemoryWarning
+{
+    [super didReceiveMemoryWarning];
+    //需要注意的是self.isViewLoaded是必不可少的，其他方式访问视图会导致它加载 ，在WWDC视频也忽视这一点。
+    if (self.isViewLoaded && !self.view.window)// 是否是正在使用的视图
+    {
+        //code
+        self.view = nil;// 目的是再次进入时能够重新加载调用viewDidLoad函数。
     }
 }
 @end
