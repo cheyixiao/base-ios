@@ -13,6 +13,7 @@
 #import "AppNetWorking.h"
 #import "WebDownloadModel.h"
 #import "NSData+Extension.h"
+#import "WebCenterManager.h"
 
 #define IS_IPAD (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
 
@@ -50,9 +51,9 @@ static WebRequestManager* instance = nil;
     
     NSString *url;
     if (IS_IPAD) {
-        url = [NSString stringWithFormat:@"https://cdn.autoforce.net/ixiao/cars/%@/36-ensure.json.manifest",carId];
+        url = [NSString stringWithFormat:@"%@/%@/36-ensure.json.manifest",[WebCenterManager shareInstance].requestBaseUrl,carId];
     }else{
-        url = [NSString stringWithFormat:@"https://cdn.autoforce.net/ixiao/cars/%@/18-ensure.json.manifest",carId];
+        url = [NSString stringWithFormat:@"%@/%@/18-ensure.json.manifest",[WebCenterManager shareInstance].requestBaseUrl,carId];
     }
     [[AppNetWorking shareInstance]getCarSourceSessionTaskWithURLString:url parameters:@{} uploadProgressBlock:^(NSProgress * _Nullable uploadProgress) {
         

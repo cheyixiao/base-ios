@@ -7,7 +7,6 @@
 //
 
 #import <Foundation/Foundation.h>
-
 NS_ASSUME_NONNULL_BEGIN
 
 @interface WebCenterManager : NSObject
@@ -16,7 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 +(instancetype) shareInstance;
 @property(nonatomic,assign)NSInteger               sandi;
 @property(nonatomic,assign)BOOL                    screenDirection;//YES:横屏 NO:竖屏
-
+@property(nonatomic,copy)NSString                 *requestBaseUrl;//请求车源包资源json文件地址
 /*
  baseUrlArr 拦截资源URL域名
  downLoad   Yes(边拦截边下) No(拦截的时候不需要下载)
