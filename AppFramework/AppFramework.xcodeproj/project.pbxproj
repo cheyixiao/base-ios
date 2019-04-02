@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		247A91112253034E006AECD1 /* BaseAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 247A910F2253034E006AECD1 /* BaseAppDelegate.m */; };
+		247A91122253034E006AECD1 /* BaseAppDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 247A91102253034E006AECD1 /* BaseAppDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		248D3D8922487321005CC6BF /* DownLoadCenterManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 248D3D7A22487320005CC6BF /* DownLoadCenterManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		248D3D8A22487321005CC6BF /* DownLoadModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 248D3D7B22487320005CC6BF /* DownLoadModel.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		248D3D8B22487321005CC6BF /* DownloadOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 248D3D7C22487320005CC6BF /* DownloadOperation.m */; };
@@ -75,9 +77,9 @@
 		24F720472244D47C008DAD01 /* WebInterceptDownLoadManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 24F720412244D47C008DAD01 /* WebInterceptDownLoadManager.m */; };
 		24F720482244D47C008DAD01 /* WebInterceptDownLoadManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 24F720422244D47C008DAD01 /* WebInterceptDownLoadManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		24F720492244D47C008DAD01 /* NSURLProtocol+WKWebVIew.h in Headers */ = {isa = PBXBuildFile; fileRef = 24F720432244D47C008DAD01 /* NSURLProtocol+WKWebVIew.h */; };
-		936A61222252FDF70012D526 /* UpdateAlertView.h in Headers */ = {isa = PBXBuildFile; fileRef = 936A61202252FDF70012D526 /* UpdateAlertView.h */; };
+		936A61222252FDF70012D526 /* UpdateAlertView.h in Headers */ = {isa = PBXBuildFile; fileRef = 936A61202252FDF70012D526 /* UpdateAlertView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		936A61232252FDF70012D526 /* UpdateAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 936A61212252FDF70012D526 /* UpdateAlertView.m */; };
-		936A61262252FE020012D526 /* UpdateModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 936A61242252FE010012D526 /* UpdateModel.h */; };
+		936A61262252FE020012D526 /* UpdateModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 936A61242252FE010012D526 /* UpdateModel.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		936A61272252FE020012D526 /* UpdateModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 936A61252252FE010012D526 /* UpdateModel.m */; };
 /* End PBXBuildFile section */
 
@@ -92,6 +94,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		247A910F2253034E006AECD1 /* BaseAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseAppDelegate.m; sourceTree = "<group>"; };
+		247A91102253034E006AECD1 /* BaseAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseAppDelegate.h; sourceTree = "<group>"; };
 		248D3D7A22487320005CC6BF /* DownLoadCenterManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DownLoadCenterManager.h; sourceTree = "<group>"; };
 		248D3D7B22487320005CC6BF /* DownLoadModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DownLoadModel.h; sourceTree = "<group>"; };
 		248D3D7C22487320005CC6BF /* DownloadOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DownloadOperation.m; sourceTree = "<group>"; };
@@ -595,6 +599,8 @@
 				24F7202922432F22008DAD01 /* BaseTabBarController.h */,
 				24F7202822432F22008DAD01 /* BaseTabBarController.m */,
 				24D1E522224234F000E8A2DB /* AppFrameworkHeader.h */,
+				247A91102253034E006AECD1 /* BaseAppDelegate.h */,
+				247A910F2253034E006AECD1 /* BaseAppDelegate.m */,
 				936A611F2252FDDF0012D526 /* UpdateAlertView */,
 				24CCB0222251ED2100800F73 /* LookCar */,
 				248D3D792248725B005CC6BF /* DownLoad */,
@@ -691,7 +697,6 @@
 			files = (
 				24D650072240DAE8000F6104 /* AppFramework.h in Headers */,
 				24D650512240E4E2000F6104 /* AppNetWorking.h in Headers */,
-				936A61262252FE020012D526 /* UpdateModel.h in Headers */,
 				24D650432240DBB1000F6104 /* NSString+Extension.h in Headers */,
 				24D1E46D2242243700E8A2DB /* WebViewManager.h in Headers */,
 				24D6504B2240E18A000F6104 /* NSData+Extension.h in Headers */,
@@ -715,13 +720,15 @@
 				24D1E523224234F000E8A2DB /* AppFrameworkHeader.h in Headers */,
 				24CCB02E2251F1D600800F73 /* WebCarModel.h in Headers */,
 				24CCB03B2251F7C700800F73 /* WebCarBaseController.h in Headers */,
-				936A61222252FDF70012D526 /* UpdateAlertView.h in Headers */,
 				24CCB03D2251FFF400800F73 /* FrameDefine.h in Headers */,
 				24CCB0322251F2BC00800F73 /* DownLoadCacheModel.h in Headers */,
 				24CCB0252251ED4C00800F73 /* WebRequestManager.h in Headers */,
 				24CCB02C2251F1D600800F73 /* WebCenterManager.h in Headers */,
 				248D3D9622487321005CC6BF /* WebDownloadModel.h in Headers */,
 				24D1E5302242389F00E8A2DB /* UIDevice+CCDevice.h in Headers */,
+				247A91122253034E006AECD1 /* BaseAppDelegate.h in Headers */,
+				936A61262252FE020012D526 /* UpdateModel.h in Headers */,
+				936A61222252FDF70012D526 /* UpdateAlertView.h in Headers */,
 				24D1E4712242246500E8A2DB /* WKProcessPool+WebCarProcessPool.h in Headers */,
 				24E76DFA224B131800F289CB /* BaseDefine.h in Headers */,
 				248D3D9222487321005CC6BF /* UncaughtExceptionHandler.h in Headers */,
@@ -836,6 +843,7 @@
 				248D3D8B22487321005CC6BF /* DownloadOperation.m in Sources */,
 				24F720442244D47C008DAD01 /* MyURLProtocol.m in Sources */,
 				24D1E4A3224230D800E8A2DB /* UIColor+CCColor.m in Sources */,
+				247A91112253034E006AECD1 /* BaseAppDelegate.m in Sources */,
 				24D1E49722422D7B00E8A2DB /* UIView+CCView.m in Sources */,
 				24D1E49C22422E6300E8A2DB /* AppFrameworkTool.m in Sources */,
 				24CCB0262251ED4C00800F73 /* WebRequestManager.m in Sources */,

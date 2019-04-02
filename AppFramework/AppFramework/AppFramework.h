@@ -39,7 +39,9 @@
 #import "WebRequestManager.h"
 #import "WebCenterManager.h"
 #import "WebDownLoadModel.h"
-
+#import "BaseAppDelegate.h"
+#import "UpdateModel.h"
+#import "UpdateAlertView.h"
 
 //! Project version number for AppFramework.
 FOUNDATION_EXPORT double AppFrameworkVersionNumber;
