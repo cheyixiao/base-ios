@@ -566,7 +566,6 @@
 		24D64FF82240DAE8000F6104 /* AppFramework */ = {
 			isa = PBXGroup;
 			children = (
-				936A611F2252FDDF0012D526 /* UpdateAlertView */,
 				24CCB0332251F59000800F73 /* MBProgressHUD */,
 				248D3D98224873C3005CC6BF /* MJExtension */,
 				24F72001224324D8008DAD01 /* Masonry */,
@@ -596,6 +595,7 @@
 				24F7202922432F22008DAD01 /* BaseTabBarController.h */,
 				24F7202822432F22008DAD01 /* BaseTabBarController.m */,
 				24D1E522224234F000E8A2DB /* AppFrameworkHeader.h */,
+				936A611F2252FDDF0012D526 /* UpdateAlertView */,
 				24CCB0222251ED2100800F73 /* LookCar */,
 				248D3D792248725B005CC6BF /* DownLoad */,
 				24F7203D2244D45A008DAD01 /* Web_intercept */,
