@@ -42,6 +42,8 @@
 #import "BaseAppDelegate.h"
 #import "UpdateModel.h"
 #import "UpdateAlertView.h"
+#import "LocationManager.h"
+#import "UserDefaults.h"
 
 //! Project version number for AppFramework.
 FOUNDATION_EXPORT double AppFrameworkVersionNumber;

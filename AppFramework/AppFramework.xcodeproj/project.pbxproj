@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		247A91112253034E006AECD1 /* BaseAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 247A910F2253034E006AECD1 /* BaseAppDelegate.m */; };
 		247A91122253034E006AECD1 /* BaseAppDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 247A91102253034E006AECD1 /* BaseAppDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		247A911D225311AE006AECD1 /* LocationManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 247A911B225311AE006AECD1 /* LocationManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		247A911E225311AE006AECD1 /* LocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 247A911C225311AE006AECD1 /* LocationManager.m */; };
+		247A91212253121C006AECD1 /* UserDefaults.h in Headers */ = {isa = PBXBuildFile; fileRef = 247A911F2253121B006AECD1 /* UserDefaults.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		247A91222253121C006AECD1 /* UserDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = 247A91202253121C006AECD1 /* UserDefaults.m */; };
 		248D3D8922487321005CC6BF /* DownLoadCenterManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 248D3D7A22487320005CC6BF /* DownLoadCenterManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		248D3D8A22487321005CC6BF /* DownLoadModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 248D3D7B22487320005CC6BF /* DownLoadModel.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		248D3D8B22487321005CC6BF /* DownloadOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 248D3D7C22487320005CC6BF /* DownloadOperation.m */; };
@@ -96,6 +100,16 @@
 /* Begin PBXFileReference section */
 		247A910F2253034E006AECD1 /* BaseAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseAppDelegate.m; sourceTree = "<group>"; };
 		247A91102253034E006AECD1 /* BaseAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseAppDelegate.h; sourceTree = "<group>"; };
+		247A911B225311AE006AECD1 /* LocationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationManager.h; sourceTree = "<group>"; };
+		247A911C225311AE006AECD1 /* LocationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationManager.m; sourceTree = "<group>"; };
+		247A911F2253121B006AECD1 /* UserDefaults.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserDefaults.h; sourceTree = "<group>"; };
+		247A91202253121C006AECD1 /* UserDefaults.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserDefaults.m; sourceTree = "<group>"; };
+		247A912E22531A7E006AECD1 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		247A912F22531A7E006AECD1 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		247A913122531A7E006AECD1 /* FCUUID.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FCUUID.m; sourceTree = "<group>"; };
+		247A913222531A7E006AECD1 /* UIDevice+FCUUID.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIDevice+FCUUID.m"; sourceTree = "<group>"; };
+		247A913322531A7E006AECD1 /* FCUUID.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FCUUID.h; sourceTree = "<group>"; };
+		247A913422531A7E006AECD1 /* UIDevice+FCUUID.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIDevice+FCUUID.h"; sourceTree = "<group>"; };
 		248D3D7A22487320005CC6BF /* DownLoadCenterManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DownLoadCenterManager.h; sourceTree = "<group>"; };
 		248D3D7B22487320005CC6BF /* DownLoadModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DownLoadModel.h; sourceTree = "<group>"; };
 		248D3D7C22487320005CC6BF /* DownloadOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DownloadOperation.m; sourceTree = "<group>"; };
@@ -295,6 +309,36 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		247A911A2253119B006AECD1 /* Location */ = {
+			isa = PBXGroup;
+			children = (
+				247A911B225311AE006AECD1 /* LocationManager.h */,
+				247A911C225311AE006AECD1 /* LocationManager.m */,
+			);
+			path = Location;
+			sourceTree = "<group>";
+		};
+		247A912D22531A7E006AECD1 /* FCUUID */ = {
+			isa = PBXGroup;
+			children = (
+				247A912E22531A7E006AECD1 /* LICENSE */,
+				247A912F22531A7E006AECD1 /* README.md */,
+				247A913022531A7E006AECD1 /* FCUUID */,
+			);
+			path = FCUUID;
+			sourceTree = "<group>";
+		};
+		247A913022531A7E006AECD1 /* FCUUID */ = {
+			isa = PBXGroup;
+			children = (
+				247A913122531A7E006AECD1 /* FCUUID.m */,
+				247A913222531A7E006AECD1 /* UIDevice+FCUUID.m */,
+				247A913322531A7E006AECD1 /* FCUUID.h */,
+				247A913422531A7E006AECD1 /* UIDevice+FCUUID.h */,
+			);
+			path = FCUUID;
+			sourceTree = "<group>";
+		};
 		248D3D792248725B005CC6BF /* DownLoad */ = {
 			isa = PBXGroup;
 			children = (
@@ -570,6 +614,7 @@
 		24D64FF82240DAE8000F6104 /* AppFramework */ = {
 			isa = PBXGroup;
 			children = (
+				247A912D22531A7E006AECD1 /* FCUUID */,
 				24CCB0332251F59000800F73 /* MBProgressHUD */,
 				248D3D98224873C3005CC6BF /* MJExtension */,
 				24F72001224324D8008DAD01 /* Masonry */,
@@ -598,9 +643,12 @@
 				24F7201F224328C3008DAD01 /* BaseNavigationController.m */,
 				24F7202922432F22008DAD01 /* BaseTabBarController.h */,
 				24F7202822432F22008DAD01 /* BaseTabBarController.m */,
-				24D1E522224234F000E8A2DB /* AppFrameworkHeader.h */,
 				247A91102253034E006AECD1 /* BaseAppDelegate.h */,
 				247A910F2253034E006AECD1 /* BaseAppDelegate.m */,
+				24D1E522224234F000E8A2DB /* AppFrameworkHeader.h */,
+				247A911F2253121B006AECD1 /* UserDefaults.h */,
+				247A91202253121C006AECD1 /* UserDefaults.m */,
+				247A911A2253119B006AECD1 /* Location */,
 				936A611F2252FDDF0012D526 /* UpdateAlertView */,
 				24CCB0222251ED2100800F73 /* LookCar */,
 				248D3D792248725B005CC6BF /* DownLoad */,
@@ -729,6 +777,8 @@
 				247A91122253034E006AECD1 /* BaseAppDelegate.h in Headers */,
 				936A61262252FE020012D526 /* UpdateModel.h in Headers */,
 				936A61222252FDF70012D526 /* UpdateAlertView.h in Headers */,
+				247A911D225311AE006AECD1 /* LocationManager.h in Headers */,
+				247A91212253121C006AECD1 /* UserDefaults.h in Headers */,
 				24D1E4712242246500E8A2DB /* WKProcessPool+WebCarProcessPool.h in Headers */,
 				24E76DFA224B131800F289CB /* BaseDefine.h in Headers */,
 				248D3D9222487321005CC6BF /* UncaughtExceptionHandler.h in Headers */,
@@ -838,8 +888,10 @@
 				24F720472244D47C008DAD01 /* WebInterceptDownLoadManager.m in Sources */,
 				24D650422240DBB1000F6104 /* NSString+Extension.m in Sources */,
 				24D1E5312242389F00E8A2DB /* UIDevice+CCDevice.m in Sources */,
+				247A91222253121C006AECD1 /* UserDefaults.m in Sources */,
 				24D1E4722242246500E8A2DB /* WKProcessPool+WebCarProcessPool.m in Sources */,
 				248D3D8D22487321005CC6BF /* DownLoadModel.m in Sources */,
+				247A911E225311AE006AECD1 /* LocationManager.m in Sources */,
 				248D3D8B22487321005CC6BF /* DownloadOperation.m in Sources */,
 				24F720442244D47C008DAD01 /* MyURLProtocol.m in Sources */,
 				24D1E4A3224230D800E8A2DB /* UIColor+CCColor.m in Sources */,

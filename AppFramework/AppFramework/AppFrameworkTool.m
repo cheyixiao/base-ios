@@ -287,4 +287,22 @@
         return nil;
     }
 }
++ (NSString *)getBaseUrlVersion
+{
+    NSDictionary *infoDictionary = [[NSBundle mainBundle] infoDictionary];
+    CFShow((__bridge CFTypeRef)(infoDictionary));
+    // app版本
+    NSString *app_Version = [infoDictionary objectForKey:@"CFBundleShortVersionString"];
+    
+    NSArray *array = [app_Version componentsSeparatedByString:@"."];
+    NSString *version = @"";
+    for (NSString *str in array) {
+        if (str.length == 1) {
+            version = [version stringByAppendingString:[NSString stringWithFormat:@"0%@", str]];
+        }else{
+            version = [version stringByAppendingString:str];
+        }
+    }
+    return version;
+}
 @end

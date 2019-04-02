@@ -84,6 +84,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 +(NSDictionary *)dictionaryWithUrlString:(NSString *)urlStr;
 
+// app版本
++ (NSString *)getBaseUrlVersion;
+
 @end
 
 NS_ASSUME_NONNULL_END
