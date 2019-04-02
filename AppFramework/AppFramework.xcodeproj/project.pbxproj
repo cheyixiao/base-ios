@@ -75,6 +75,10 @@
 		24F720472244D47C008DAD01 /* WebInterceptDownLoadManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 24F720412244D47C008DAD01 /* WebInterceptDownLoadManager.m */; };
 		24F720482244D47C008DAD01 /* WebInterceptDownLoadManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 24F720422244D47C008DAD01 /* WebInterceptDownLoadManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		24F720492244D47C008DAD01 /* NSURLProtocol+WKWebVIew.h in Headers */ = {isa = PBXBuildFile; fileRef = 24F720432244D47C008DAD01 /* NSURLProtocol+WKWebVIew.h */; };
+		936A61222252FDF70012D526 /* UpdateAlertView.h in Headers */ = {isa = PBXBuildFile; fileRef = 936A61202252FDF70012D526 /* UpdateAlertView.h */; };
+		936A61232252FDF70012D526 /* UpdateAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 936A61212252FDF70012D526 /* UpdateAlertView.m */; };
+		936A61262252FE020012D526 /* UpdateModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 936A61242252FE010012D526 /* UpdateModel.h */; };
+		936A61272252FE020012D526 /* UpdateModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 936A61252252FE010012D526 /* UpdateModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -261,6 +265,10 @@
 		24F720412244D47C008DAD01 /* WebInterceptDownLoadManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebInterceptDownLoadManager.m; sourceTree = "<group>"; };
 		24F720422244D47C008DAD01 /* WebInterceptDownLoadManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebInterceptDownLoadManager.h; sourceTree = "<group>"; };
 		24F720432244D47C008DAD01 /* NSURLProtocol+WKWebVIew.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURLProtocol+WKWebVIew.h"; sourceTree = "<group>"; };
+		936A61202252FDF70012D526 /* UpdateAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UpdateAlertView.h; sourceTree = "<group>"; };
+		936A61212252FDF70012D526 /* UpdateAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UpdateAlertView.m; sourceTree = "<group>"; };
+		936A61242252FE010012D526 /* UpdateModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UpdateModel.h; sourceTree = "<group>"; };
+		936A61252252FE010012D526 /* UpdateModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UpdateModel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -558,6 +566,7 @@
 		24D64FF82240DAE8000F6104 /* AppFramework */ = {
 			isa = PBXGroup;
 			children = (
+				936A611F2252FDDF0012D526 /* UpdateAlertView */,
 				24CCB0332251F59000800F73 /* MBProgressHUD */,
 				248D3D98224873C3005CC6BF /* MJExtension */,
 				24F72001224324D8008DAD01 /* Masonry */,
@@ -662,6 +671,17 @@
 			path = Web_intercept;
 			sourceTree = "<group>";
 		};
+		936A611F2252FDDF0012D526 /* UpdateAlertView */ = {
+			isa = PBXGroup;
+			children = (
+				936A61242252FE010012D526 /* UpdateModel.h */,
+				936A61252252FE010012D526 /* UpdateModel.m */,
+				936A61202252FDF70012D526 /* UpdateAlertView.h */,
+				936A61212252FDF70012D526 /* UpdateAlertView.m */,
+			);
+			path = UpdateAlertView;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -671,6 +691,7 @@
 			files = (
 				24D650072240DAE8000F6104 /* AppFramework.h in Headers */,
 				24D650512240E4E2000F6104 /* AppNetWorking.h in Headers */,
+				936A61262252FE020012D526 /* UpdateModel.h in Headers */,
 				24D650432240DBB1000F6104 /* NSString+Extension.h in Headers */,
 				24D1E46D2242243700E8A2DB /* WebViewManager.h in Headers */,
 				24D6504B2240E18A000F6104 /* NSData+Extension.h in Headers */,
@@ -694,6 +715,7 @@
 				24D1E523224234F000E8A2DB /* AppFrameworkHeader.h in Headers */,
 				24CCB02E2251F1D600800F73 /* WebCarModel.h in Headers */,
 				24CCB03B2251F7C700800F73 /* WebCarBaseController.h in Headers */,
+				936A61222252FDF70012D526 /* UpdateAlertView.h in Headers */,
 				24CCB03D2251FFF400800F73 /* FrameDefine.h in Headers */,
 				24CCB0322251F2BC00800F73 /* DownLoadCacheModel.h in Headers */,
 				24CCB0252251ED4C00800F73 /* WebRequestManager.h in Headers */,
@@ -821,6 +843,7 @@
 				24D1E53522423B4E00E8A2DB /* BaseViewController.m in Sources */,
 				24CCB02B2251F1D600800F73 /* WebCenterManager.m in Sources */,
 				24CCB03A2251F7C700800F73 /* WebCarBaseController.m in Sources */,
+				936A61232252FDF70012D526 /* UpdateAlertView.m in Sources */,
 				24D1E5382242419400E8A2DB /* JSBridgeViewController.m in Sources */,
 				248D3D8F22487321005CC6BF /* WebDownloadModel.m in Sources */,
 				24F720462244D47C008DAD01 /* NSURLProtocol+WKWebVIew.m in Sources */,
@@ -830,6 +853,7 @@
 				24F72021224328C4008DAD01 /* BaseNavigationController.m in Sources */,
 				248D3D9522487321005CC6BF /* DownLoadCenterManager.m in Sources */,
 				24F7202A22432F22008DAD01 /* BaseTabBarController.m in Sources */,
+				936A61272252FE020012D526 /* UpdateModel.m in Sources */,
 				24D1E46E2242243700E8A2DB /* WebViewManager.m in Sources */,
 				248D3D9422487321005CC6BF /* DownloadManager.m in Sources */,
 				24D650522240E4E2000F6104 /* AppNetWorking.m in Sources */,
