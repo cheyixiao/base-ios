@@ -50,8 +50,6 @@
 }
 - (void)navigationController:(UINavigationController *)navigationController willShowViewController:(UIViewController *)viewController animated:(BOOL)animated {
     
-    //    [self setNavigationStatus:viewController];
-    
     // 判断要显示的控制器是否是自己
     
     
@@ -73,6 +71,7 @@
         [_reloadBtn setImage:reloadImage forState:UIControlStateNormal];
         [_reloadBtn setContentHorizontalAlignment:UIControlContentHorizontalAlignmentLeft];
         [_reloadBtn addTarget:self action:@selector(relodBtnClick:) forControlEvents:UIControlEventTouchUpInside];
+        [self.view addSubview:_reloadBtn];
     }
     return _reloadBtn;
 }

@@ -241,23 +241,6 @@
 }
 -(void)webViewManagerLoadingDidFailed:(WebViewManager *)webViewManager{
     
-   
-    dispatch_async(dispatch_get_main_queue(), ^{
-        
-        [MBProgressHUD hideHUDForView:self.view animated:YES];
-        
-        self.title = @"加载失败";
-        self.reloadBtn.hidden = NO;
-        self.webViewManager.webView.hidden = YES;
-        if (![AppNetWorking networkReachibility]) {
-            UIImage *image = [UIImage imageNamed:@"noNetImage"];
-            [self resetRelodBtnFrame:image];
-        }else{
-            UIImage *image = [UIImage imageNamed:@"emptyContentImage"];
-            [self resetRelodBtnFrame:image];
-        }
-    });
-    
 }
 -(void)webViewManagerLoadingDidFinished:(WebViewManager *)webViewManager{
     
