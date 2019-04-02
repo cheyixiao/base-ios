@@ -81,7 +81,7 @@
 {
     [self dismissAlertView];
     if (self.clickBlock) {
-        self.clickBlock(self.model.type);
+        self.clickBlock(self.model);
     }
 }
 

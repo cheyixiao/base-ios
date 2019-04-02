@@ -17,8 +17,8 @@ typedef NS_ENUM(NSUInteger,CYXHomePromptViewType) {
     jumWebViewType = 3,  //跳转h5
     promptType = 4,  //提示
 };
-///立即更新和提示的确定按钮操作
-typedef void(^ClickBlock)(CYXHomePromptViewType type);
+///确定按钮的各种操作
+typedef void(^ClickBlock)(UpdateModel *model);
 @interface UpdateAlertView : UIView
 ///项目如没有背景图，可以单独设置
 @property (nonatomic,copy) NSString *imageName;
