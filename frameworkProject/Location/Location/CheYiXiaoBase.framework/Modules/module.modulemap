@@ -1,0 +1,6 @@
+framework module CheYiXiaoBase {
+  umbrella header "CheYiXiaoBase.h"
+
+  export *
+  module * { export * }
+}

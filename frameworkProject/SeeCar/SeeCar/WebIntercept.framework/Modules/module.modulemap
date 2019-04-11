@@ -1,0 +1,6 @@
+framework module WebIntercept {
+  umbrella header "WebIntercept.h"
+
+  export *
+  module * { export * }
+}
