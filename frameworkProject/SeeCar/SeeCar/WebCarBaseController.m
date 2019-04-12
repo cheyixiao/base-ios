@@ -90,7 +90,7 @@
 - (void)quanjingCar{
     if (self.type == 1) {
         [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(downLoadPersent:) name:@"webCarSourceDownLoad" object:nil];
-//        [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(downLoadError:) name:@"webSourceDownLoadError" object:nil];
+        [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(downLoadError:) name:@"webSourceDownLoadError" object:nil];
 
         
         DownLoadCacheModel *downLoadModel = [NSKeyedUnarchiver unarchiveObjectWithFile:[DownLoadCacheModel systemMsgCachePath]];
@@ -390,8 +390,12 @@
     if (dic) {
         NSString *carId = dic[@"carId"];
         if ([self.carId isEqualToString:carId]) {
-            NSString *jsStr = [NSString stringWithFormat:@"downLoadError()"];
-            [self.webViewManager evaluateJavaScript:jsStr];
+            dispatch_async(dispatch_get_main_queue(), ^{
+                
+                NSString *jsStr = [NSString stringWithFormat:@"downLoadError()"];
+                [self.webViewManager evaluateJavaScript:jsStr];
+            });
+           
         }
     }
 }

@@ -737,34 +737,33 @@ static id instace = nil;
     
     if ([task respondsToSelector:@selector(downloadModel)] ) {
         WebDownloadModel *downloadModel = (WebDownloadModel *)task.downloadModel;
-//        if (downloadModel) {
-//
-//            NSString *downLoadPath = [self fileName:downloadModel];
-//            NSData *downLoadData = [NSData dataWithContentsOfFile:downLoadPath];
-//            if (downLoadData) {
-//                NSString *hash = [DownLoadCenterManager shareInstance].downLoadHashDic[downloadModel.urlString];
-//                NSString *downLoadMD5 = downLoadData.getMD5Data;
-//                if ([hash isEqualToString:downLoadMD5]) {
-//                    //下载后的数据是正确的
-//                    [self downLoadCompleted:downloadModel];
-//                }else{
-//                    [[DownloadManager sharedManager] stopAll];
-//                    [DownloadManager sharedManager].downLoadCenterManager.downing      = NO;
-//                    [[NSNotificationCenter defaultCenter] postNotificationName:@"webSourceDownLoadError" object:nil userInfo:nil];
-//
-//                }
-//            }else{
-//                [[DownloadManager sharedManager] stopAll];
-//                [DownloadManager sharedManager].downLoadCenterManager.downing      = NO;
-//                [[NSNotificationCenter defaultCenter] postNotificationName:@"webSourceDownLoadError" object:nil userInfo:nil];
-//
-//            }
-//
-//            [self downLoadCompleted:downloadModel];
-//        }
         if (downloadModel) {
-             [self downLoadCompleted:downloadModel];
+
+            NSString *downLoadPath = [self fileName:downloadModel];
+            NSData *downLoadData = [NSData dataWithContentsOfFile:downLoadPath];
+            if (downLoadData) {
+                NSString *hash = [DownLoadCenterManager shareInstance].downLoadHashDic[downloadModel.urlString];
+                NSString *downLoadMD5 = downLoadData.getMD5Data;
+                if ([hash isEqualToString:downLoadMD5]) {
+                    //下载后的数据是正确的
+                    [self downLoadCompleted:downloadModel];
+                }else{
+                    [[DownloadManager sharedManager] stopAll];
+                    [DownloadManager sharedManager].downLoadCenterManager.downing      = NO;
+                    [[NSNotificationCenter defaultCenter] postNotificationName:@"webSourceDownLoadError" object:nil userInfo:nil];
+
+                }
+            }else{
+                [[DownloadManager sharedManager] stopAll];
+                [DownloadManager sharedManager].downLoadCenterManager.downing      = NO;
+                [[NSNotificationCenter defaultCenter] postNotificationName:@"webSourceDownLoadError" object:nil userInfo:nil];
+
+            }
+
         }
+//        if (downloadModel) {
+//             [self downLoadCompleted:downloadModel];
+//        }
         
         [downloadModel.stream close];
         downloadModel.stream = nil;

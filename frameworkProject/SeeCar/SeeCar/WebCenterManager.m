@@ -75,7 +75,7 @@ static WebCenterManager* instance = nil;
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(webPageStartDownLoad:) name:@"webPageSourceStartDownLoad" object:nil];
     //添加下载包进度监听
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(downLoadPersent:) name:@"webCarSourceDownLoad" object:nil];
-//    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(downLoadError:) name:@"webSourceDownLoadError" object:nil];
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(downLoadError:) name:@"webSourceDownLoadError" object:nil];
 
 }
 - (void)setDownLoadCacheCar{
@@ -241,7 +241,6 @@ static WebCenterManager* instance = nil;
 }
 - (void)downLoadError:(NSNotification *)noification{
     
-//    [[DownloadManager sharedManager] stopAll];
     NSDictionary *dic = noification.userInfo;
     if (dic) {
          NSString *carId = dic[@"carId"];
