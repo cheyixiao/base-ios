@@ -22,6 +22,8 @@ MJCodingImplementation
 - (NSString *)destinationPath {
     
     NSString *patientPhotoFolder = [[CYXCachesDirectory stringByAppendingPathComponent:self.folder] stringByAppendingPathComponent:[self.fileName stringByDeletingLastPathComponent]];
+//    NSString *patientPhotoFolder = [CYXCachesDirectory stringByAppendingPathComponent:self.folder];
+
     
     if (![kFileManager fileExistsAtPath:patientPhotoFolder]) {
         [[NSFileManager defaultManager] createDirectoryAtPath:patientPhotoFolder
@@ -34,6 +36,7 @@ MJCodingImplementation
     }
     
     _destinationPath = [patientPhotoFolder stringByAppendingString:[NSString stringWithFormat:@"/%@",[self.fileName lastPathComponent]]];
+    NSLog(@"_destinationPath:%@",_destinationPath);
 //    _destinationPath = [patientPhotoFolder stringByAppendingString:self.fileFormat];
 //    _destinationPath = patientPhotoFolder;
     return _destinationPath;

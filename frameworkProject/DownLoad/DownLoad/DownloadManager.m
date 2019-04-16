@@ -658,6 +658,8 @@ static id instace = nil;
     if (!self) {
         return;
     }
+    NSLog(@"currentRequestUrlAbsoluteString:%@",dataTask.currentRequest.URL.absoluteString);
+
     if (![dataTask respondsToSelector:@selector(downloadModel)]) {
         return;
     }
@@ -738,6 +740,7 @@ static id instace = nil;
     if ([task respondsToSelector:@selector(downloadModel)] ) {
         WebDownloadModel *downloadModel = (WebDownloadModel *)task.downloadModel;
         if (downloadModel) {
+            NSLog(@"urlString:%@",downloadModel.urlString);
 
             NSString *downLoadPath = [self fileName:downloadModel];
             NSData *downLoadData = [NSData dataWithContentsOfFile:downLoadPath];
@@ -814,17 +817,21 @@ static id instace = nil;
     }
     
     NSString *persentStr = [NSString stringWithFormat:@"%.2f",persent];
+    NSLog(@"persentStr:%@",persentStr);
     NSDictionary *dic = @{@"persent":persentStr,@"carId":downloadModel.folder,@"result":finished};
     [[NSNotificationCenter defaultCenter] postNotificationName:@"webCarSourceDownLoad" object:nil userInfo:dic];
 }
 - (NSString *)fileName:(WebDownloadModel *)downloadModel{
     
-    NSString * fileName = downloadModel.jsonFileName;
-    fileName            = [NSString stringWithFormat:@"/ixiao/cars/%@/%@",downloadModel.folder,fileName];
-    fileName            = [AppFrameworkTool md5:fileName];
-    fileName            = [fileName stringByAppendingString:[AppFrameworkTool fileFormat:downloadModel.jsonFileName]];
+//    NSString * fileName = downloadModel.jsonFileName;
+//    fileName            = [NSString stringWithFormat:@"/ixiao/cars/%@/%@",downloadModel.folder,fileName];
+//    fileName            = [AppFrameworkTool md5:fileName];
+//    fileName            = [fileName stringByAppendingString:[AppFrameworkTool fileFormat:downloadModel.jsonFileName]];
+//
+//    NSString *downLoadPath = [NSString stringWithFormat:@"%@%@/%@",CYXCachesDirectory,downloadModel.folder,fileName];
     
-    NSString *downLoadPath = [NSString stringWithFormat:@"%@%@/%@",CYXCachesDirectory,downloadModel.folder,fileName];
+    NSString * fileName = downloadModel.fileName;
+    NSString *downLoadPath = [NSString stringWithFormat:@"%@/%@/%@",CYXCachesDirectory,downloadModel.folder,fileName];
     
     return downLoadPath;
     

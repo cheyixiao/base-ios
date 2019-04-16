@@ -67,7 +67,7 @@ static WebRequestManager* instance = nil;
                 NSDictionary *dic       = @{};
                 NSArray *arr                = (NSArray *)result;
                 [self addWebInterceptHash:arr carId:carId];
-                NSString *basePath = [NSString stringWithFormat:@"%@%@",CYXCachesDirectory,carId];
+                NSString *basePath = [NSString stringWithFormat:@"%@/%@",CYXCachesDirectory,carId];
                 if (![[NSFileManager defaultManager]fileExistsAtPath:basePath]) {
                     
                     dic = [self addDownLoadModel:arr carId:carId];
@@ -121,7 +121,9 @@ static WebRequestManager* instance = nil;
     
     for (NSDictionary *dic in result) {
         
-        NSString * fileName = [self fileName:dic carId:carId];
+//        NSString * fileName = [self fileName:dic carId:carId];
+        NSString * fileName = [AppFrameworkTool safeString:dic[@"file"]];
+
         NSString * url      = [NSString stringWithFormat:@"https://cdn.autoforce.net/ixiao/cars/%@/%@",carId,[AppFrameworkTool safeString:dic[@"file"]]];
         url      =[url stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
         
@@ -148,14 +150,15 @@ static WebRequestManager* instance = nil;
         if ([DownLoadCenterManager shareInstance].check == NO) {
             break;
         }
-        NSString * fileName = [self fileName:dic carId:carId];
+//        NSString * fileName = [self fileName:dic carId:carId];
+        NSString * fileName = [AppFrameworkTool safeString:dic[@"file"]];
         NSString * url      = [NSString stringWithFormat:@"https://cdn.autoforce.net/ixiao/cars/%@/%@",carId,[AppFrameworkTool safeString:dic[@"file"]]];
         url      =[url stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
         
         NSString * fileHash = [AppFrameworkTool safeString:dic[@"hash"]];
         if ([self isUrlAddress:url] && ![[DownLoadCenterManager shareInstance].downLoadFailUrls containsObject:url] ) {
             //有效的url
-            NSString *downLoadPath = [NSString stringWithFormat:@"%@%@/%@",CYXCachesDirectory,carId,fileName];
+            NSString *downLoadPath = [NSString stringWithFormat:@"%@/%@/%@",CYXCachesDirectory,carId,fileName];
             
             BOOL exsit =  [[NSFileManager defaultManager]fileExistsAtPath:downLoadPath];
             if (exsit) {
@@ -206,6 +209,7 @@ static WebRequestManager* instance = nil;
     NSDictionary *attributes = @{@"arr":downLoadArr,@"update":[NSString stringWithFormat:@"%ld",(long)update],@"count":[NSString stringWithFormat:@"%ld",(long)finishedArr.count]};
     return attributes;
 }
+//用hash做文件名
 - (NSString *)fileName:(NSDictionary *)dic carId:(NSString *)carId{
     
     NSString * fileName = [AppFrameworkTool safeString:dic[@"file"]];

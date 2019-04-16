@@ -98,28 +98,29 @@
             
             NSString *tmpVersion =downLoadModel.tempVersions[self.carId];
             NSString *version    =downLoadModel.versions[self.carId];
-            
-            if ([tmpVersion isEqualToString:version]) {
-                //该车源包是最新的
-                [self loadWeb:@"4"];
-                [[WebCenterManager shareInstance]setDownLoadStatus:@"4" carId:self.carId];
-            }else{
-                if (version && version.length) {
-                    
-                    //之前下载过 有更新 用户没有选择更新
-                    if (![[DownLoadCenterManager shareInstance].downLoadCar.allKeys containsObject:self.carId]) {
-                        [[WebCenterManager shareInstance]setDownLoadStatus:@"2" carId:self.carId];
-                        [self loadWeb:@"2"];
+            if (tmpVersion && tmpVersion.length) {
+                if ([tmpVersion isEqualToString:version]) {
+                    //该车源包是最新的
+                    [self loadWeb:@"4"];
+                    [[WebCenterManager shareInstance]setDownLoadStatus:@"4" carId:self.carId];
+                }else{
+                    if (version && version.length) {
+                        
+                        //之前下载过 有更新 用户没有选择更新
+                        if (![[DownLoadCenterManager shareInstance].downLoadCar.allKeys containsObject:self.carId]) {
+                            [[WebCenterManager shareInstance]setDownLoadStatus:@"2" carId:self.carId];
+                            [self loadWeb:@"2"];
+                        }else{
+                            [self dealQuanjing];
+                        }
                     }else{
                         [self dealQuanjing];
                     }
-                    
-                }else{
-                    [self dealQuanjing];
                 }
-                
+            }else{
+                [self dealQuanjing];
+
             }
-            
         }else{
             [self dealQuanjing];
         }
@@ -140,7 +141,7 @@
         [self loadWeb:down];
         if ([down isEqualToString:@"3"]) {
             WebCarModel *model = [DownLoadCenterManager shareInstance].downLoadCar[self.carId];
-            if (![model.persent isEqualToString:@"100"]) {
+            if (![model.persent isEqualToString:@"100"] && ![model.persent isEqualToString:@"0"]) {
                 float progress = [model.persent floatValue];
                 dispatch_async(dispatch_get_main_queue(), ^{
                     

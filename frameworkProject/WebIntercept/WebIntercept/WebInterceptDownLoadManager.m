@@ -13,7 +13,7 @@
 #import <CommonCrypto/CommonDigest.h>
 #import <BaseFramework/NSData+Extension.h>
 
-#define  CYXCachesDirectory [[NSSearchPathForDirectoriesInDomains(NSLibraryDirectory, NSUserDomainMask, YES) lastObject] stringByAppendingString:@"/NoCloud/cars/"]
+#define  CYXCachesDirectory [[NSSearchPathForDirectoriesInDomains(NSLibraryDirectory, NSUserDomainMask, YES) lastObject] stringByAppendingString:@"/NoCloud/"]
 
 @implementation WebInterceptDownLoadManager
 
@@ -140,19 +140,41 @@ static WebInterceptDownLoadManager* instance = nil;
 }
 - (NSString *)pathWithFolder:(NSURL *)url{
     
-    NSString *localPath = @"";
-    if ([url.absoluteString containsString:[WebInterceptDownLoadManager shareInstance].folderCarId]) {
-        localPath = [WebInterceptDownLoadManager shareInstance].folderCarId;
-        
-    }else if ([url.absoluteString containsString:[WebInterceptDownLoadManager shareInstance].folderCommon]){
-        
-         localPath = [WebInterceptDownLoadManager shareInstance].folderCommon;
-        
-    }else{
-        localPath = @"webIntercept";
-    }
+//    NSString *localPath = @"";
+//    if ([url.absoluteString containsString:[WebInterceptDownLoadManager shareInstance].folderCarId]) {
+//        localPath = [WebInterceptDownLoadManager shareInstance].folderCarId;
+//
+//    }else if ([url.absoluteString containsString:[WebInterceptDownLoadManager shareInstance].folderCommon]){
+//
+//         localPath = [WebInterceptDownLoadManager shareInstance].folderCommon;
+//
+//    }else{
+//        localPath = @"webIntercept";
+//    }
     
-    NSString *patientPhotoFolder = [[WebInterceptDownLoadManager shareInstance].basePath?:CYXCachesDirectory stringByAppendingPathComponent:localPath];
+//    NSString *patientPhotoFolder = [[WebInterceptDownLoadManager shareInstance].basePath?:CYXCachesDirectory stringByAppendingPathComponent:localPath];
+    
+//    NSFileManager *fileManager = [[NSFileManager alloc] init];
+//    if (![fileManager fileExistsAtPath:patientPhotoFolder]) {
+//        [fileManager createDirectoryAtPath:patientPhotoFolder
+//
+//               withIntermediateDirectories:YES
+//
+//                                attributes:nil
+//
+//                                     error:nil];
+//    }
+    //储存文件名称+格式
+    NSString *absoluteString        = url.absoluteString;
+    for (NSString *baseUrl in [WebInterceptDownLoadManager shareInstance].baseUrlArr) {
+        if ([absoluteString containsString:baseUrl]) {
+            absoluteString                  = [absoluteString substringFromIndex:baseUrl.length];//截取掉下标baseUrl.length之后的字符串
+            break;
+        }
+    }
+    NSString *basePath            = [WebInterceptDownLoadManager shareInstance].basePath?:CYXCachesDirectory;
+    
+    NSString *patientPhotoFolder = [basePath stringByAppendingPathComponent:[absoluteString stringByDeletingLastPathComponent]];
     
     NSFileManager *fileManager = [[NSFileManager alloc] init];
     if (![fileManager fileExistsAtPath:patientPhotoFolder]) {
@@ -164,19 +186,14 @@ static WebInterceptDownLoadManager* instance = nil;
          
                                      error:nil];
     }
-    //储存文件名称+格式
-    NSString *absoluteString        = url.absoluteString;
-    for (NSString *baseUrl in [WebInterceptDownLoadManager shareInstance].baseUrlArr) {
-        if ([absoluteString containsString:baseUrl]) {
-            absoluteString                  = [absoluteString substringFromIndex:baseUrl.length];//截取掉下标baseUrl.length之后的字符串
-            break;
-        }
-    }
-    NSString * fileName = [self md5:absoluteString];
-    fileName            = [fileName stringByAppendingString:[self fileFormat:url.lastPathComponent]];
+//    NSString * fileName = [self md5:absoluteString];
+//    fileName            = [fileName stringByAppendingString:[self fileFormat:url.lastPathComponent]];
+//
+//    patientPhotoFolder = [patientPhotoFolder stringByAppendingString:[NSString stringWithFormat:@"/%@",fileName]];
     
-    patientPhotoFolder = [patientPhotoFolder stringByAppendingString:[NSString stringWithFormat:@"/%@",fileName]];
-    return patientPhotoFolder;
+     NSString *destinationPath = [patientPhotoFolder stringByAppendingString:[NSString stringWithFormat:@"/%@",[absoluteString lastPathComponent]]];
+    
+    return destinationPath;
 }
 
 #pragma mark - NSURLSessionDownloadDelegate

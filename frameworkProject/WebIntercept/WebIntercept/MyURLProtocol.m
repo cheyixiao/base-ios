@@ -10,8 +10,9 @@
 #import <CommonCrypto/CommonDigest.h>
 #import "WebInterceptDownLoadManager.h"
 #import <MobileCoreServices/MobileCoreServices.h>
+#import <DownLoad/DownLoadCenterManager.h>
 
-#define LibraryDirectory [[NSSearchPathForDirectoriesInDomains(NSLibraryDirectory, NSUserDomainMask, YES) lastObject] stringByAppendingString:@"/NoCloud/cars/"]
+#define LibraryDirectory [[NSSearchPathForDirectoriesInDomains(NSLibraryDirectory, NSUserDomainMask, YES) lastObject] stringByAppendingString:@"/NoCloud/"]
 
 @implementation MyURLProtocol
 
@@ -51,39 +52,43 @@
     [NSURLProtocol setProperty:@YES forKey:@"MyURLProtocolHandledKey" inRequest:newRequest];
    
     NSString *absoluteString        = newRequest.URL.absoluteString;
+    NSLog(@"absoluteString:%@",absoluteString);
     for (NSString *baseUrl in [WebInterceptDownLoadManager shareInstance].baseUrlArr) {
         if ([absoluteString containsString:baseUrl]) {
             absoluteString                  = [absoluteString substringFromIndex:baseUrl.length];//截取掉下标baseUrl.length之后的字符串
             break;
         }
     }
-    NSString *localPath = @"";
-    if ([newRequest.URL.absoluteString containsString:[WebInterceptDownLoadManager shareInstance].folderCarId]) {
-         localPath = [NSString stringWithFormat:@"%@%@/%@",LibraryDirectory,[WebInterceptDownLoadManager shareInstance].folderCarId,[self md5:absoluteString]];
-    }else if ([newRequest.URL.absoluteString containsString:[WebInterceptDownLoadManager shareInstance].folderCommon]){
-        localPath = [NSString stringWithFormat:@"%@%@/%@",LibraryDirectory,[WebInterceptDownLoadManager shareInstance].folderCommon,[self md5:absoluteString]];
-    }else{
-         localPath = [NSString stringWithFormat:@"%@%@/%@",LibraryDirectory,@"webIntercept",[self md5:absoluteString]];
-    }
-  
-    localPath = [localPath stringByAppendingString:[self fileFormat:newRequest.URL.lastPathComponent]];
+    NSString *localPath = [NSString stringWithFormat:@"%@%@",LibraryDirectory,absoluteString];
+//    if ([newRequest.URL.absoluteString containsString:[WebInterceptDownLoadManager shareInstance].folderCarId]) {
+//         localPath = [NSString stringWithFormat:@"%@%@/%@",LibraryDirectory,[WebInterceptDownLoadManager shareInstance].folderCarId,[self md5:absoluteString]];
+//    }else if ([newRequest.URL.absoluteString containsString:[WebInterceptDownLoadManager shareInstance].folderCommon]){
+//        localPath = [NSString stringWithFormat:@"%@%@/%@",LibraryDirectory,[WebInterceptDownLoadManager shareInstance].folderCommon,[self md5:absoluteString]];
+//    }else{
+//         localPath = [NSString stringWithFormat:@"%@%@/%@",LibraryDirectory,@"webIntercept",[self md5:absoluteString]];
+//    }
+//
+//    localPath = [localPath stringByAppendingString:[self fileFormat:newRequest.URL.lastPathComponent]];
     
     BOOL existPath                  = [[NSFileManager defaultManager]fileExistsAtPath:localPath];
     if (existPath ) {
         NSData *data = [NSData dataWithContentsOfFile:localPath];
         if (data) {
+            if ([WebInterceptDownLoadManager shareInstance].log) {
+                NSLog(@"localPath:::::::::::%@",localPath);
+            }
             NSString *type = [self getMimeTypeWithFilePath:localPath];
             [self sendResponseWithData:data mimeType:type];
         }else{
             [self startWithSession:newRequest];
-            if ([WebInterceptDownLoadManager shareInstance].downLoad) {
+            if ([WebInterceptDownLoadManager shareInstance].downLoad && [DownLoadCenterManager shareInstance].downing == NO && ![[DownLoadCenterManager shareInstance].currentCarID isEqualToString:[WebInterceptDownLoadManager shareInstance].folderCarId]) {
                 [[WebInterceptDownLoadManager shareInstance]beginDownloadWithUrl:newRequest.URL.absoluteString];
             }
         }
         
     }else{
         [self startWithSession:newRequest];
-        if ([WebInterceptDownLoadManager shareInstance].downLoad) {
+        if ([WebInterceptDownLoadManager shareInstance].downLoad && [DownLoadCenterManager shareInstance].downing == NO && ![[DownLoadCenterManager shareInstance].currentCarID isEqualToString:[WebInterceptDownLoadManager shareInstance].folderCarId]) {
             [[WebInterceptDownLoadManager shareInstance]beginDownloadWithUrl:newRequest.URL.absoluteString];
         }
     }

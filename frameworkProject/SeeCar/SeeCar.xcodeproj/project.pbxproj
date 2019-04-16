@@ -33,7 +33,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		242D5C35226027CA0018D65A /* DownLoad.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = DownLoad.framework; sourceTree = "<group>"; };
+		2401BB0322656F2300C8F9EE /* DownLoad.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = DownLoad.framework; sourceTree = "<group>"; };
 		2499F8F4225C96E0006E874A /* DownLoadCacheModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DownLoadCacheModel.h; sourceTree = "<group>"; };
 		2499F8F5225C96E0006E874A /* WebCenterManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebCenterManager.m; sourceTree = "<group>"; };
 		2499F8F6225C96E0006E874A /* WebCenterManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebCenterManager.h; sourceTree = "<group>"; };
@@ -136,7 +136,7 @@
 		24C8D33A22536E5300017F69 /* SeeCar */ = {
 			isa = PBXGroup;
 			children = (
-				242D5C35226027CA0018D65A /* DownLoad.framework */,
+				2401BB0322656F2300C8F9EE /* DownLoad.framework */,
 				2499F91B225DE62E006E874A /* WebIntercept.framework */,
 				24CE96192255D81C002471A0 /* BaseFramework.framework */,
 				24CE96172255D81C002471A0 /* CheYiXiaoBase.framework */,

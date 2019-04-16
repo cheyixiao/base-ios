@@ -29,6 +29,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2401BB08226573C200C8F9EE /* DownLoad.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = DownLoad.framework; sourceTree = "<group>"; };
 		247A916522533CF9006AECD1 /* WebIntercept.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = WebIntercept.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		247A916822533CF9006AECD1 /* WebIntercept.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WebIntercept.h; sourceTree = "<group>"; };
 		247A916922533CF9006AECD1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -84,6 +85,7 @@
 		247A916722533CF9006AECD1 /* WebIntercept */ = {
 			isa = PBXGroup;
 			children = (
+				2401BB08226573C200C8F9EE /* DownLoad.framework */,
 				2499F91A225DE38A006E874A /* BaseFramework.framework */,
 				247A916822533CF9006AECD1 /* WebIntercept.h */,
 				247A917F22533D11006AECD1 /* MyURLProtocol.h */,
